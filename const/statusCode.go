@@ -1,0 +1,8 @@
+package _const
+
+const (
+	STATUS_SUCCESS = 0
+	REDIS_WRITE_ERR = 1001
+	REDIS_READ_ERR = 1002
+	LOG_WRITE_ERR = 2001
+)

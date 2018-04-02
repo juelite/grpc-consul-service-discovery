@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+option java_package = "io.grpc.examples";
+
+package protoFile;
+
+//service 写在这里
+service Greeter {
+  //写redis缓存
+  rpc RedisCache (RedisCacheRequest) returns (RedisCacheReply) {}
+  //获取redis缓存
+  rpc GetCache (GetCacheRequest) returns (GetCacheReply) {}
+  //写kibana日志
+  rpc FrLog (FrLogRequest) returns (FrLogReply) {}
+}
+
+//写redis缓存 传入参数
+message RedisCacheRequest {
+    string name = 1;
+    string value = 2;
+    int64 express = 3;
+}
+
+//写redis缓存 返回信息
+message RedisCacheReply {
+    int32 code = 4;
+    string message = 5;
+    map<string , string> data = 6;
+}
+
+//获取redis缓存 传入参数
+message GetCacheRequest {
+    string name = 1;
+}
+
+//获取redis缓存 返回参数
+message GetCacheReply {
+    int32 code = 2;
+    string message = 3;
+    map<string , string> data = 4;
+}
+
+//写日志 传入参数
+message FrLogRequest {
+    string tag = 1;
+    string info = 2;
+    string level = 3;
+}
+
+//写日志 返回信息
+message FrLogReply {
+    int32 code = 3;
+    string message = 4;
+    map<string , string> data = 5;
+}
