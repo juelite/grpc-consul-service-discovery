@@ -173,5 +173,3 @@ Consul旨在与DevOps社区和应用程序开发人员保持友好，使其成�
         s.Serve(lis)
     }
 
-
-文件源码：https://github.com/juelite/grpc-consul-service-discovery
